@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html {
+  background-color: black;
+  color: white;
+  font-family: monospace, Consolas;
+} */
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* .text-green-neon {
+  text-shadow: 0 0 8px #00dd00, 0 0 10px #00dd00, 0 0 12px #00dd00, 0 0 14px #00dd00, 0 0 16px #00dd00;
+}
+
+.text-red-neon {
+  text-shadow: 0 0 8px #dd0000, 0 0 10px #dd0000, 0 0 12px #dd0000, 0 0 14px #dd0000, 0 0 16px #dd0000;
+}
+
+.text-blue-neon {
+  text-shadow: 0 0 8px #0000dd, 0 0 10px #0000dd, 0 0 12px #0000dd, 0 0 14px #0000dd, 0 0 16px #0000dd;
+}
+
+.text-green-s-neon {
+  text-shadow: 0 0 8px #00dd00, 0 0 10px #00dd00, 0 0 12px #00dd00
+}
+
+.text-red-s-neon {
+  text-shadow: 0 0 8px #dd0000, 0 0 10px #dd0000, 0 0 12px #dd0000
+}
+
+.text-blue-s-neon {
+  text-shadow: 0 0 8px #0000dd, 0 0 10px #0000dd, 0 0 12px #0000dd
+} */
