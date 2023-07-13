@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, getAuth, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth'
 import { doc, setDoc } from "firebase/firestore"
-import { auth, db } from '../firebase'
+import { db } from '../firebase'
 import { gen_uname } from '../scripts/functions';
 
 import Validation from '../scripts/RegisterValidation';
@@ -49,18 +49,9 @@ const Register = () => {
             });
 
             setDoc(doc(db, "userChats", user.uid), {});
-            
-            signOut(auth)
-              .then(() => {
-                alert('Re-log into your account');
-              })
-              .catch((error) => {
-                alert('An error occurred');
-                console.error(error);
-              });
 
             console.log("Success")
-            navigate('/login')
+            navigate('/home')
           })
           .catch((err) => {
             console.log(err.code);

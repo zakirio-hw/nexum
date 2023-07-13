@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, getAuth } from 'firebase/auth'
-import { auth, db } from '../firebase'
 
 import Validation from '../scripts/LoginValidation';
 
