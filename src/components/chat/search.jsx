@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 
-import 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+// import 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
 import { collection, getDoc, getDocs, query, serverTimestamp, setDoc, doc, updateDoc, where } from 'firebase/firestore'
 import { db } from '../../firebase'
 import { AuthContext } from '../../scripts/AuthContext'
