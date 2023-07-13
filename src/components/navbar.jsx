@@ -7,20 +7,15 @@ import { AuthContext } from '../scripts/AuthContext'
 
 const Navbar = () => {
     let Links =[
-      {name:"SERVICE",link:"/"},
-      {name:"ABOUT",link:"/"},
-      {name:"CONTACT",link:"/"},
+      {name:"REVIEWS",link:"/reviews"},
+      {name:"ABOUT",link:"/about"},
+      {name:"CONTACT",link:"/contact"},
     ];
     let [open,setOpen]=useState(false);
 
     const location = useLocation();
     const { clearAuthData } = useContext(AuthContext)
-
-    const ShowButton = () => {
-      /*if (location.pathname === '/home') */ { <Button><a href='../main'>Open Nexum</a></Button> }
-      /*if (location.pathname === '/main') */ { <Button><a onClick={handleSignOut}>Log Out</a></Button> }
-    }
-
+    
     const handleSignOut = () => {
       clearAuthData()
       signOut(auth)
@@ -34,15 +29,22 @@ const Navbar = () => {
     };
 
   return (
-    <div className='shadow-md w-full fixed top-0 left-0 font-cons'>
+    <div className='shadow-md w-full fixed top-0 left-0 font-cons z-50'>
       <div className='md:flex items-center justify-between rounded-lg neon-green bg-green-500 py-4 md:px-10 px-7'>
         <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
-          <div className='p-1.5 bg-black rounded-lg'>
+          <div className='group p-1.5 bg-black rounded-lg absolute' style={{width:'84px', height:'48px'}}>
             <a href='../'>
               <div className="mx-auto text-2xl">
-                <span className='text-green-600 text-neon-s-green'>「</span>
+                <div className='text-green-400 text-neon-green absolute inline-block min-w-min transform text-3xl
+                  transition-transform duration-500 group-hover:scale-125'>
+                  「 」
+                </div>
+                <div className='absolute shadow-lg inline-block min-w-min transform justify-center right-8'>
+                  <span className='text-red-400 text-neon-red'>n</span>
+                </div>
+                {/* <span className='text-green-600 text-neon-s-green'>「</span>
                 <span className='text-red-600 text-neon-s-red'>n</span>
-                <span className='text-green-600 text-neon-s-green'>」</span>
+                <span className='text-green-600 text-neon-s-green'>」</span> */}
               </div>
             </a>
           </div>
@@ -58,8 +60,10 @@ const Navbar = () => {
             </li>
           ))
         }
-        {location.pathname === '/home' && <Button><a href='../main'>Open Nexum</a></Button>}
-        {location.pathname === '/main' && <Button><a onClick={handleSignOut}>Log Out</a></Button>}
+        {location.pathname === '/reviews' || location.pathname === '/about' || location.pathname === '/contact' 
+          ? <Button><a href='../main'>Open Nexum</a></Button>
+          : null}
+        {location.pathname === '/main' && <Button><a href='../login' onClick={handleSignOut}>Log Out</a></Button>}
       </ul>
       </div>
     </div>

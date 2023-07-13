@@ -18,6 +18,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.800');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.green.800');
+}
+
 /* .text-green-neon {
   text-shadow: 0 0 8px #00dd00, 0 0 10px #00dd00, 0 0 12px #00dd00, 0 0 14px #00dd00, 0 0 16px #00dd00;
 }

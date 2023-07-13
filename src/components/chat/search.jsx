@@ -59,6 +59,7 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
+      setUser(null)
     } catch (err) {
       setUser(null)
       setUname("")
@@ -66,17 +67,17 @@ const Search = () => {
   }
 
   return (
-    <div className='border-b-4 border-green-600 h-9'>
+    <div className='border-b-4 border-green-600 h-30'>
         <div className='flex m-3 space-x-2'>
           <span className='text-green-500 text-neon-s-green text-lg'><ion-icon name="search-outline"></ion-icon></span>
           <input className='text-white bg-transparent outline-none placeholder:text-gray-500 placeholder:italic w-full px-1.5 mb-1.5' 
           placeholder="Search 'username#tag'" onKeyDown={handleKey} value={uname} onChange={e => setUname(e.target.value)}/>
-          {err && <span>Can't find user with specified username and tag</span>}
-          {user && <div className='py-2 px-4 border-t-2 border-green-500 hover:bg-green-900 duration-200' onClick={handleSelect}>
+        </div>
+        {err && <span>Can't find user with specified username and tag</span>}
+        {user && <div className='py-2 px-4 border-t-2 border-green-500 hover:bg-green-900 duration-200' onClick={handleSelect}>
             <div className='text-2xl'><b>{user.displayName}</b></div>
             <div className='text-gray-500'><i>Start chatting with this user</i></div>
-          </div>}
-        </div>
+        </div>}
     </div>
   )
 }

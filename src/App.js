@@ -1,12 +1,15 @@
 import './styles/index.css';
 import { useContext, useEffect } from 'react'
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { AuthContext } from './scripts/AuthContext'
 import Navbar from './components/navbar'
 import Home from './views/home'
 import LogIn from './views/login'
 import Register from './views/register';
 import Main from './views/main';
+import Reviews from './views/reviews';
+import About from './views/about';
+import Contact from './views/contact';
 
 const RedirectHome = () => {
   const navigate = useNavigate();
@@ -32,6 +35,7 @@ const RedirectLogIn = () => {
 
 function App() {
   const {currentUser} = useContext(AuthContext)
+  console.log("Auth data:")
   console.log(currentUser)
 
   return (
@@ -44,6 +48,9 @@ function App() {
         <Route path="/login" element={ <LogIn/> } />
         <Route path="/register" element={ <Register/> } />
         <Route path="/main" element={  !currentUser ? <RedirectLogIn /> : <Main/> } />
+        <Route path="/reviews" element={ <Reviews/> } />
+        <Route path="/about" element={ <About/> } />
+        <Route path="/contact" element={ <Contact/> } />
       </Routes>
     </div>
     </>

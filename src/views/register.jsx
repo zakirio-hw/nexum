@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, signOut, updateProfile } from 'firebase/auth'
 import { doc, setDoc } from "firebase/firestore"
-import { db } from '../firebase'
+import { auth, db } from '../firebase'
 import { gen_uname } from '../scripts/functions';
 
 import Validation from '../scripts/RegisterValidation';
@@ -48,8 +48,19 @@ const Register = () => {
               password,
             });
 
+            setDoc(doc(db, "userChats", user.uid), {});
+            
+            signOut(auth)
+              .then(() => {
+                alert('Re-log into your account');
+              })
+              .catch((error) => {
+                alert('An error occurred');
+                console.error(error);
+              });
+
             console.log("Success")
-            navigate('/main')
+            navigate('/login')
           })
           .catch((err) => {
             console.log(err.code);
@@ -146,6 +157,7 @@ const Register = () => {
                 Register
               </button>
             </div>
+            <p className='mt-4'>{err && <span className='text-red-500 text-neon-red'>Registration error. 	&#40;A record may have already existed&#41;</span>}</p>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500 pb-2">
