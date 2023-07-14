@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nexum/static/css/main.1ff4b7f4.css",
+    "main.js": "/nexum/static/js/main.5ca2b141.js",
+    "static/media/Adimas.jpg": "/nexum/static/media/Adimas.c554244bc55abcd672d0.jpg",
+    "static/media/Zakirio.jpg": "/nexum/static/media/Zakirio.85faf93309d97a2ed9a9.jpg",
+    "index.html": "/nexum/index.html",
+    "main.1ff4b7f4.css.map": "/nexum/static/css/main.1ff4b7f4.css.map",
+    "main.5ca2b141.js.map": "/nexum/static/js/main.5ca2b141.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ff4b7f4.css",
+    "static/js/main.5ca2b141.js"
+  ]
+}
