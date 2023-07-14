@@ -31,9 +31,10 @@
         gap: 10px;
 
         p {
-            background: theme('colors.red.600');
+            background: theme('colors.red.500');
             padding: 10px 20px;
-            border-radius: 0px 10px 10px 10px;
+            border-radius: 0px 10px 10px 10px; 
+            box-shadow: 0 0 10px theme('colors.red.500'), 0 0 20px theme('colors.red.700'), 0 0 40px theme('colors.red.900');
             max-width: max-content;
         }
 
@@ -56,8 +57,9 @@
             align-items: flex-end;
 
             p {
-                background: theme('colors.blue.600');
+                background: theme('colors.blue.500');
                 border-radius: 10px 0px 10px 10px;
+                box-shadow: 0 0 10px theme('colors.blue.500'), 0 0 20px theme('colors.blue.700'), 0 0 40px theme('colors.blue.900');
             }
         }
 
