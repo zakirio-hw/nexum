@@ -3,7 +3,7 @@ import Button from './button';
 import { useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
-import { AuthContext } from '../scripts/AuthContext' 
+import { AuthContext } from '../scripts/AuthContext'
 
 const Navbar = () => {
     let Links =[
