@@ -3,6 +3,7 @@ import Button from '../components/button'
 
 const Home = () => {
   return (
+    <>
     <div className='pt-36'>
       <div className='group cursor-default text-center text-8xl flex justify-center relative'>
         <div className='text-green-400 text-neon-green absolute inline-block min-w-min transform mr-64 mt-2 z-20 
@@ -23,6 +24,7 @@ const Home = () => {
         <Button><div className='p-3'><a href='../main'>Open Nexum</a></div></Button>
       </div>
     </div>
+    </>
   )
 }
 
